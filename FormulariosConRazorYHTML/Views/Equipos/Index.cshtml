@@ -1,7 +1,15 @@
-﻿<h1>Mantenimiento de Equipos</h1>
-<br>
-<form>
-    @* Inicio del Formulario *@
+﻿<div class="row">
+    <div class="form-group">
+        <div class="col-md-6">
+            @Html.Label("lblNombre", "Nombre")
+            @Html.TextBox("nombre", "", new { @class = "form-control", placeholder = "Ingrese el nombre" })
+        </div>
+    </div>
 
-    @* Fin del Formulario *@
-</form>
+    <div class="form-group">
+        <div class="col-md-6">
+            @Html.Label("lblDescripcion", "Descripción")
+            @Html.TextArea("descripcion", "", new { @class = "form-control", placeholder = "Ingrese la descripción" })
+        </div>
+    </div>
+</div>

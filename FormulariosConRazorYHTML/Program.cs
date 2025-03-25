@@ -1,7 +1,14 @@
-var builder = WebApplication.CreateBuilder(args);
+using FormulariosConRazorYHTML.Models;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);   
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Agregar servicios al contenedor
+builder.Services.AddDbContext<equiposDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 

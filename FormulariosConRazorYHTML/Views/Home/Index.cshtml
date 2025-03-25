@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var listaMarcas = (List<SelectListItem>)ViewData["Marcas"];
 }
 
 <h1>Mantenimiento de Equipos</h1>
@@ -46,11 +47,22 @@
     <div class="row">
         <div class="form-group">
             <div class="col-md-6">
+                @Html.Label("lblMarca", "Marca")
+                @Html.DropDownList("marca", listaMarcas, "Seleccione una marca", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-6">
                 @Html.Label("lblFechaCompra", "Fecha de Compra")
                 @Html.TextBox("fechaCompra", "", new { @class = "form-control", type = "date" })
             </div>
         </div>
+    </div>
 
+    <div class="row">
         <div class="form-group">
             <div class="col-md-6">
                 @Html.Label("lblPrecio", "Precio")
